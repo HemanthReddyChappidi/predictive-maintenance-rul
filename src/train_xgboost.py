@@ -5,6 +5,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from xgboost import XGBRegressor
 import joblib
+import mlflow
+import mlflow.xgboost
+
+mlflow.set_tracking_uri("file://" + str(Path("./mlruns").resolve()))
+mlflow.set_experiment("Predictive-Maintenance-RUL")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_FILE = BASE_DIR / "data" / "processed" / "train_features.csv"
@@ -31,18 +36,19 @@ def split_data(df):
 def train_model(X_train, y_train):
     print("Training XGBoost model...")
 
-    model = XGBRegressor(
-        n_estimators=300,
-        max_depth=6,
-        learning_rate=0.05,
-        subsample=0.8,
-        colsample_bytree=0.8,
-        random_state=42,
-        n_jobs=-1
-    )
+    params = {
+        "n_estimators": 300,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "random_state": 42
+    }
 
+    model = XGBRegressor(**params, n_jobs=-1)
     model.fit(X_train, y_train)
-    return model
+
+    return model, params
 
 
 def evaluate(model, X_test, y_test):
@@ -56,6 +62,9 @@ def evaluate(model, X_test, y_test):
     print(f"RMSE: {rmse:.2f} cycles")
     print(f"MAE : {mae:.2f} cycles")
 
+    mlflow.log_metric("rmse", rmse)
+    mlflow.log_metric("mae", mae)
+
 
 def save_model(model):
     joblib.dump(model, MODEL_PATH)
@@ -66,9 +75,22 @@ def main():
     df = load_data()
     X_train, X_test, y_train, y_test = split_data(df)
 
-    model = train_model(X_train, y_train)
-    evaluate(model, X_test, y_test)
-    save_model(model)
+    # Start MLflow run for entire pipeline
+    with mlflow.start_run():
+
+        model, params = train_model(X_train, y_train)
+
+        # log hyperparameters
+        mlflow.log_params(params)
+
+        # evaluate and log metrics
+        evaluate(model, X_test, y_test)
+
+        # log model artifact
+        mlflow.xgboost.log_model(model, "model")
+
+        # save local copy
+        save_model(model)
 
 
 if __name__ == "__main__":

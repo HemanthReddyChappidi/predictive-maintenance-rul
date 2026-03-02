@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/6163278fd2d843fea9d33e67afe21ebe/artifacts
+end_time: 1772469052700
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6163278fd2d843fea9d33e67afe21ebe
+run_name: luminous-worm-727
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772469049469
+status: 4
+tags: []
+user_id: hemanthreddychappidi

@@ -1,0 +1,10 @@
+artifact_location: file:///Users/hemanthreddychappidi/Documents/Projects/predictive-maintenance-rul/mlruns/870524702428021415/models/m-71adccf253184591a026ab956057851c/artifacts
+creation_timestamp: 1772469109728
+experiment_id: '870524702428021415'
+last_updated_timestamp: 1772469111735
+model_id: m-71adccf253184591a026ab956057851c
+model_type: null
+name: model
+source_run_id: 63f2a840cb4d4a7f9e9f008012be5147
+status: 2
+status_message: null

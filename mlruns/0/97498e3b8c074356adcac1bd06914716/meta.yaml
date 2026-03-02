@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/97498e3b8c074356adcac1bd06914716/artifacts
+end_time: 1772468566012
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 97498e3b8c074356adcac1bd06914716
+run_name: bright-gnat-164
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772468562888
+status: 4
+tags: []
+user_id: hemanthreddychappidi

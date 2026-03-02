@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/ff59f39979b945d182a0ca89685bdd44/artifacts
+end_time: 1772468729145
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ff59f39979b945d182a0ca89685bdd44
+run_name: worried-snail-163
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772468726064
+status: 4
+tags: []
+user_id: hemanthreddychappidi

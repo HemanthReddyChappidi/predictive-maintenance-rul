@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hemanthreddychappidi/Documents/Projects/predictive-maintenance-rul/mlruns/870524702428021415/63f2a840cb4d4a7f9e9f008012be5147/artifacts
+end_time: 1772469111740
+entry_point_name: ''
+experiment_id: '870524702428021415'
+lifecycle_stage: active
+run_id: 63f2a840cb4d4a7f9e9f008012be5147
+run_name: capable-mink-374
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772469108666
+status: 3
+tags: []
+user_id: hemanthreddychappidi

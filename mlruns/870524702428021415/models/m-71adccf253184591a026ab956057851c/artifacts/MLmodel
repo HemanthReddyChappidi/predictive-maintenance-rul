@@ -1,0 +1,22 @@
+artifact_path: file:///Users/hemanthreddychappidi/Documents/Projects/predictive-maintenance-rul/mlruns/870524702428021415/models/m-71adccf253184591a026ab956057851c/artifacts
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.9.6
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBRegressor
+    model_format: xgb
+    xgb_version: 2.1.4
+mlflow_version: 3.1.4
+model_id: m-71adccf253184591a026ab956057851c
+model_size_bytes: 1319072
+model_uuid: m-71adccf253184591a026ab956057851c
+prompts: null
+run_id: 63f2a840cb4d4a7f9e9f008012be5147
+utc_time_created: '2026-03-02 16:31:49.737166'
