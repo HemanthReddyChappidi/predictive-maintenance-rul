@@ -7,3 +7,4 @@ xgboost
 tqdm
 jupyter
 mlflow
+torch
